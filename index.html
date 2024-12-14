@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Pulla Reddy Sweets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --orange: #FF8C00;
+            --light-orange: #FFD700;
+            --cream: #FFF8DC;
+            --brown: #8B4513;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            color: var(--brown);
+        }
+
+        /* Marquee Section */
+    .scrolling-text {
+      background-color: #b31b1b; /* Red background */
+      color: white; /* White text */
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1031; /* Above the navbar */
+      padding: 5px 0;
+    }
+
+    .scrolling-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 27s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Navbar Styling */
+    body {
+      padding-top: 90px; /* Adjusted for marquee and navbar */
+    }
+
+    .navbar {
+      z-index: 1030;
+    }
+
+
+
+        .navbar:hover {
+            background-color: var(--light-orange);
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .nav-item {
+            margin-left: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--brown);
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x600?text=Hero+Image');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 600px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+
+      /* 9:16 Aspect Ratio for Videos */
+      .video-container {
+      position: relative;
+      width: 100%;
+      padding-top: 177.78%; /* 16:9 aspect ratio (100% / (16/9)) */
+      overflow: hidden;
+    }
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Section Spacing */
+    .section-spacing {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--orange);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--light-orange);
+        }
+
+        footer {
+            background-color: var(--orange);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+
+
+
+        /* Section styling */
+.traditions-section {
+  background-color: #ee2d07; /* Red background */
+  color: aliceblue;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Container for the items */
+.traditions-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Individual tradition items */
+.tradition-item {
+  max-width: 300px;
+  text-align: center;
+}
+
+.tradition-icon {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.tradition-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tradition-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px; /* Distance from bottom */
+  right: 30px; /* Distance from right */
+  width: 50px;
+  height: 50px;
+  background-color: #a72c26; /* Match your red theme */
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  display: none; /* Initially hidden */
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: #8b2320; /* Slightly darker shade on hover */
+  color: #fff;
+}
+
+
+    </style>
+</head>
+<body>
+
+
+  <!-- Scrolling Marquee -->
+  <div class="scrolling-text">
+    <span>PAN INDIA FREE SHIPPING ABOVE 2500RS &nbsp; • &nbsp; INTERNATIONAL SHIPPING FOR US / CANADA &nbsp; • &nbsp; PAN INDIA FREE SHIPPING ABOVE 2500RS &nbsp; • &nbsp; INTERNATIONAL SHIPPING FOR US / CANADA</span>
+  </div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <!-- Navbar Brand -->
+        <a class="navbar-brand" href="#">
+          <img src="https://via.placeholder.com/180x77?text=G+Pulla+Reddy+Sweets" alt="G Pulla Reddy Sweets" height="60">
+        </a>
+        <!-- Navbar Toggler for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#shop">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gifting">Gifting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Our Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bellam Kaju</h1>
+                <p>A Delightful Blend of Sweetness and Crunch!</p>
+                <a href="#shop-now" class="btn">Shop Now</a>
+            </div>
+        </section>
+
+           <!-- Section with Videos -->
+  <section class="container section-spacing">
+    <h2 class="section-title">Taste the legacy today!</h2>
+    <p>Since 1948, our Indian brand has been delighting customers with exquisite mithai, spice powders, namkeens, and tangy pickles.</p>
+
+    <!-- Video Grid for Large and Small Devices -->
+    <div class="d-none d-md-block"> <!-- Hide on Extra Small Screens -->
+      <div class="row gx-3 gy-4">
+        <!-- Video 1 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="video-container">
+            <video autoplay muted loop>
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!-- Video 2 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="video-container">
+            <video autoplay muted loop>
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!-- Video 3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="video-container">
+            <video autoplay muted loop>
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!-- Video 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="video-container">
+            <video autoplay muted loop>
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel for Small Devices -->
+    <div id="videoCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Video 1 -->
+        <div class="carousel-item active">
+          <div class="video-container">
+            <video autoplay muted loop>
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!-- Video 2 -->
+        <div class="carousel-item">
+          <div class="video-container">
+            <video autoplay muted loop>
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!-- Video 3 -->
+        <div class="carousel-item">
+          <div class="video-container">
+            <video autoplay muted loop>
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!-- Video 4 -->
+        <div class="carousel-item">
+          <div class="video-container">
+            <video autoplay muted loop>
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+        <section class="container">
+            <h2 class="section-title">A Sweet Tradition collections</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Classic+Baklavas" alt="Classic Baklavas">
+                    <div class="card-content">
+                        <h3>Classic Baklavas</h3>
+                        <p>1 Product</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Spicy+Powders" alt="Spicy Powders">
+                    <div class="card-content">
+                        <h3>Spicy Powders</h3>
+                        <p>10 Products</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Signature+Specialities" alt="Signature Specialities">
+                    <div class="card-content">
+                        <h3>Signature Specialities</h3>
+                        <p>9 Products</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Traditional+Pickles" alt="Traditional Pickles">
+                    <div class="card-content">
+                        <h3>Traditional Pickles</h3>
+                        <p>10 Products</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="traditions-section">
+          <h1 class="section-title">Our Sweet Traditions</h1>
+          <div class="traditions-container">
+            <!-- Traditional Section -->
+            <div class="tradition-item">
+              <img src="traditional-icon.png" alt="Traditional" class="tradition-icon">
+              <h2 class="tradition-title">Traditional</h2>
+              <p class="tradition-description">
+                From humble beginnings in a small town to a beloved household name, we have been crafting traditional Indian delicacies with love and expertise for generations. Each sweet tells a story of heritage, flavor, and sweet memories shared across families.
+              </p>
+            </div>
+            <!-- Purity Section -->
+            <div class="tradition-item">
+              <img src="purity-icon.png" alt="Purity" class="tradition-icon">
+              <h2 class="tradition-title">Purity</h2>
+              <p class="tradition-description">
+                Crafted with purity and tradition, our sweets are made with our finest cattle ghee, ensuring each bite is a taste of pure bliss.
+              </p>
+            </div>
+            <!-- Social Responsibility Section -->
+            <div class="tradition-item">
+              <img src="social-responsibility-icon.png" alt="Social Responsibility" class="tradition-icon">
+              <h2 class="tradition-title">Social Responsibility</h2>
+              <p class="tradition-description">
+                We not only delighted taste buds but also nurtured minds. By establishing schools and colleges for students, we embody a commitment to uplift the community and pave the way for a brighter future.
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="container">
+            <h2 class="section-title">Our Bestsellers</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Ajmeri+Kalakand" alt="Ajmeri Kalakand">
+                    <div class="card-content">
+                        <h3>Ajmeri Kalakand</h3>
+                        <p>Rs. 280.00</p>
+                        <a href="#" class="btn">Add to bag</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Kaju+Kathli" alt="Kaju Kathli">
+                    <div class="card-content">
+                        <h3>Kaju Kathli</h3>
+                        <p>Rs. 320.00</p>
+                        <a href="#" class="btn">Add to bag</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Mysore+Pak" alt="Mysore Pak">
+                    <div class="card-content">
+                        <h3>Mysore Pak</h3>
+                        <p>Rs. 250.00</p>
+                        <a href="#" class="btn">Add to bag</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Badam+Halwa" alt="Badam Halwa">
+                    <div class="card-content">
+                        <h3>Badam Halwa</h3>
+                        <p>Rs. 300.00</p>
+                        <a href="#" class="btn">Add to bag</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Our Sweet Traditions</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/220x150?text=Traditional" alt="Traditional">
+                    <div class="card-content">
+                        <h3>Traditional</h3>
+                        <p>From humble beginnings in a small town to a beloved household name, We have been crafting traditional Indian delicacies with love and expertise for generations.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/220x150?text=Purity" alt="Purity">
+                    <div class="card-content">
+                        <h3>Purity</h3>
+                        <p>Crafted with purity and tradition, our sweets are made with our finest cattle ghee, ensuring each bite is a taste of pure bliss.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/220x150?text=Social+Responsibility" alt="Social Responsibility">
+                    <div class="card-content">
+                        <h3>Social Responsibility</h3>
+                        <p>We not only delighted taste buds but also nurtured minds. By establishing schools and colleges for students, we embody a commitment to uplift the community and pave the way for a brighter future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">A Journey of 75 Years</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/600x400?text=About+Us" alt="About Us">
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>SINCE 1948</h3>
+                        <p>With over seven decades of experience, we bring authentic flavors and tradition to your home.</p>
+                        <a href="#read-more" class="btn">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Latest blogs</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Blog+Post+1" alt="Blog post 1">
+                    <div class="card-content">
+                        <h3>Bellam Sunnundalu: Traditional Indian Sweet with a Modern Twist</h3>
+                        <a href="#read-more" class="btn">Read more</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Blog+Post+2" alt="Blog post 2">
+                    <div class="card-content">
+                        <h3>Satisfy your sweet tooth: Unveiling G.Pulla Reddy-Hyderabad's Top Most Sweet Shop</h3>
+                        <a href="#read-more" class="btn">Read more</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Blog+Post+3" alt="Blog post 3">
+                    <div class="card-content">
+                        <h3>G Pulla Reddy Sweets – Experience Tradition With Every Bite</h3>
+                        <a href="#read-more" class="btn">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Arrow -->
+   <a href="#" class="back-to-top" id="backToTop">
+      &#8679; <!-- Unicode for upward arrow -->
+   </a>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://via.placeholder.com/150x65?text=Footer+Logo" alt="Footer Logo" class="footer-logo">
+                    <p>Rooted in our sweet traditions, we draw inspiration from the cherished practices of our ancestors.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#cake-and-cookie-treats">Cake and Cookie Treats</a></li>
+                        <li><a href="#classic-baklavas">Classic Baklavas</a></li>
+                        <li><a href="#dry-fruit-sweets">Dry Fruit Sweets</a></li>
+                        <li><a href="#jaggery-sweets">Jaggery Sweets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop Online</h4>
+                    <ul>
+                        <li><a href="#pan-india">Pan India</a></li>
+                        <li><a href="#international">International</a></li>
+                        <li><a href="#hyderabad">Hyderabad</a></li>
+                        <li><a href="#bangalore">Bangalore</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#terms-and-conditions">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; G.PULLA REDDY SWEETS 2023. All Rights Reserved. Designed and Development by <a href="https://abox.agency/">abox Agency</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to cards on scroll
+        const cards = document.querySelectorAll('.card');
+        const animateCards = () => {
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardBottom = card.getBoundingClientRect().bottom;
+                if (cardTop < window.innerHeight && cardBottom > 0) {
+                    card.style.animation = 'fadeInUp 1s ease-out forwards';
+                }
+            });
+        };
+        window.addEventListener('scroll', animateCards);
+        animateCards(); // Initial check on page load
+
+        // Show the button when scrolling down
+  const backToTop = document.getElementById("backToTop");
+
+window.onscroll = function () {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+};
+
+// Smooth scroll to the top
+backToTop.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
