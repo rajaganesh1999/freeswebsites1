@@ -25,29 +25,27 @@
 
         /* Marquee Section */
     .scrolling-text {
-      background-color: #b31b1b; /* Red background */
-      color: white; /* White text */
-      font-weight: bold;
-      overflow: hidden;
-      white-space: nowrap;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1031; /* Above the navbar */
-      padding: 5px 0;
-    }
+    background-color: #b31b1b; /* రెడ్ బ్యాక్‌గ్రౌండ్ */
+    color: white; /* తెల్ల టెక్స్ట్ */
+    font-weight: bold; /* బోల్డ్ ఫాంట్ */
+    overflow: hidden; /* అవతలి టెక్స్ట్ కనిపించకుండా */
+    white-space: nowrap; /* టెక్స్ట్ బ్రేక్ కాకుండా */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1031; /* పైగా చూపించు */
+}
 
-    .scrolling-text span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 27s linear infinite;
-    }
+.scrolling-text span {
+    display: inline-block;
+    animation: scrollInfinite 10s linear infinite; /* సున్నితంగా స్క్రోల్ */
+}
 
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
+@keyframes scrollInfinite {
+    0% { transform: translateX(0); } /* స్క్రోల్ ప్రారంభం */
+    100% { transform: translateX(-100%); } /* స్క్రోల్ ఎడమవైపు పూర్తవుతుంది */
+}
 
     /* Navbar Styling */
     body {
@@ -373,9 +371,14 @@
 
 
   <!-- Scrolling Marquee -->
-  <div class="scrolling-text">
-    <span>PAN INDIA FREE SHIPPING ABOVE 2500RS &nbsp; • &nbsp; INTERNATIONAL SHIPPING FOR US / CANADA &nbsp; • &nbsp; PAN INDIA FREE SHIPPING ABOVE 2500RS &nbsp; • &nbsp; INTERNATIONAL SHIPPING FOR US / CANADA</span>
-  </div>
+   <div class="scrolling-text">
+    <span>
+        PAN INDIA FREE SHIPPING ABOVE 2500RS &nbsp; • &nbsp; INTERNATIONAL SHIPPING FOR US / CANADA &nbsp; • &nbsp; PAN INDIA FREE SHIPPING ABOVE 2500RS &nbsp; • &nbsp; INTERNATIONAL SHIPPING FOR US / CANADA
+    </span>
+    <span>
+        PAN INDIA FREE SHIPPING ABOVE 2500RS &nbsp; • &nbsp; INTERNATIONAL SHIPPING FOR US / CANADA &nbsp; • &nbsp; PAN INDIA FREE SHIPPING ABOVE 2500RS &nbsp; • &nbsp; INTERNATIONAL SHIPPING FOR US / CANADA
+    </span>
+</div>
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
